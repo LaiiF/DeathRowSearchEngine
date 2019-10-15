@@ -37,5 +37,5 @@ def search():#Defines the search look which is rendered with html @ search.html
 def results():
     if request.method == 'POST':
         query = request.form.get('query')
-    query, ranking, totaldocs, totalwords, timetaken  = appsearch.search(query)
-    return render_template('results.html', title = 'Results', query = query, doclist = ranking, totaldocs = totaldocs, totalwords = totalwords, timetaken = timetaken)
+    query, ranking, totaldocs, totalwords, timetaken, TFIDFvals  = appsearch.search(query)
+    return render_template('results.html', title = 'Results', query = query, doclist = ranking, totaldocs = totaldocs, totalwords = totalwords, timetaken = timetaken, TFIDFvals = TFIDFvals)

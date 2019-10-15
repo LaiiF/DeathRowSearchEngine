@@ -1,10 +1,7 @@
 #Returns info to results page
 #Reference: https://towardsdatascience.com/tfidf-for-piece-of-text-in-python-43feccaa74f8
-#import cgi
 import csv
 import re
-#import os
-#import numpy as np
 import string
 import nltk
 nltk.download('stopwords')
@@ -89,8 +86,8 @@ def search(query):
     timetaken = end - start
     ranking = rank(TFIDFvals, query_token, totaldocs, freqDictlist)
     display = output(ranking, doclist)
-    return query_token, display, totaldocs, totalwords, timetaken
-
+    return query_token, display, totaldocs, totalwords, timetaken, TFIDFvals
+#takes ranking of docs and displays full docs to user
 def output(ranking, doclist):
     display = []
     temp = {}
@@ -100,7 +97,13 @@ def output(ranking, doclist):
             if num['doc_id'] == id:
                 temp = {'doc_id' : id, 'FirstName' : docs[2], 'LastName' : docs[3], 'LastStatement' : docs[4]}
         display.append(temp)
+        if(len(display) == 10):
+            break
+    for letter in display[0]['LastStatement']:
+        if 'ÿ' in letter or string.punctuation in letter:
+            letter = ''
     return display
+#ranks the documents in accordance to the user query
 def rank(TFIDFvals, query_token, totaldocs, freqDictlist):
     TFIDFvals = sorted(TFIDFvals, key = itemgetter('TFIDFval'), reverse = True)
     freqlist = []
