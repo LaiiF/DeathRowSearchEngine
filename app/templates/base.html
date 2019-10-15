@@ -1,0 +1,30 @@
+<html>
+    <header>
+            Sitch: 
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('search') }}">Search</a>
+    </header>
+    <head>
+        {% block content %}
+        {% if title %}
+        <title>
+            {{ title }} - Sitch
+        </title>
+        {% else %}
+        <title>Welcome to Sitch</title>
+        {% endif %}
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <u1>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </u1>
+        {% endif %}
+        {% endwith %}
+        {% endblock %}
+    </body>
+</html>

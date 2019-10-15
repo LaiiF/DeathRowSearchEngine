@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Results</h1>
+<body>
+    <script>
+        var query = {{ query| safe }}
+        var totaldocs = {{ totcaldocs| safe}}
+    </script>
+    <h2> Your query: {{ query }} </h2>
+    <h2> Total docs: {{ totaldocs }} </h2>
+    <h2> Total words: {{ totalwords }} </h2>
+    Time Taken: {{ timetaken }}
+    <ul>
+    {% for doc in doclist %}
+    <li>{{ doc }}</li>
+    {% endfor %}
+    </ul>
+</body>
+{% endblock %}
