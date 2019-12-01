@@ -15,7 +15,7 @@ import time
 from operator import itemgetter
 import pickle
 PUNCTUATION = re.compile('[~`!@#$%^&*()+={\[}\]|\\:;"\',<.>/?]')
-stop_words = set(stopwords.words('english'))                        
+stop_words = set(stopwords.words('english'))
 #computes tf-idf and displays results page
 #main searching method
 #Term Frequency(TF) * Inverse Document Frequency (IDF) = TF-IDF
@@ -55,7 +55,7 @@ def search(query):
         else:
             query_token[qtoken] += 1
     #open csv file
-    with open('app/texasLastStatements.csv', newline ='') as csvfile:
+    with open('app/texasLastStatements.csv', 'r', encoding = 'utf-8', errors='ignore', newline= '') as csvfile:
         readlines = csv.DictReader(csvfile)
         for line in readlines:
             ii +=1
@@ -100,7 +100,7 @@ def output(ranking, doclist):
         if(len(display) == 10):
             break
     for letter in display[0]['LastStatement']:
-        if 'ÿ' in letter or string.punctuation in letter:
+        if 'ÿ' in letter or '\\' in letter or string.punctuation in letter:
             letter = ''
     return display
 #ranks the documents in accordance to the user query
@@ -142,7 +142,7 @@ def parseddoc(doclist):
         lowerLStatement = ""
         #lowercasing all words in last statement and rebuilding it
         for letter in LastStatement:
-            if letter not in string.punctuation and 'ÿ' not in letter:  #and letter not in STOP_WORDS:
+            if letter not in string.punctuation and 'ÿ' not in letter and '?' not in letter:  #and letter not in STOP_WORDS:
                 letter = letter.lower()
                 lowerLStatement += letter
         #tokenize last statement list
@@ -158,7 +158,7 @@ def parseddoc(doclist):
         for strings in statement_tokens:
             strings = lt.lemmatize(strings)
         parsedlist.append([int(TDCJNumber), lowerFName, lowerLName, statement_tokens])
-                
+
     return parsedlist
 
 def freqdict(parsedlist, freqDictlist):#creates freq dictionary using parsedlist
@@ -206,7 +206,7 @@ def IDFCompute(freqDictlist, doc_info):
             counter = sum([keys in tempDict['freq_dict'] for tempDict in freqDictlist])
             temp = {'doc_id' : count, 'IDFval' : math.log(len(doc_info)/counter), 'key' : keys}
             IDFvals.append(temp)
-    return IDFvals                    
+    return IDFvals
 
 def TFIDFCompute(TFvals, IDFvals):
     TFIDFvals = []

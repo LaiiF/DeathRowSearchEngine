@@ -8,12 +8,11 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
-#Input for the text search 
+#Input for the text search
 class TextSearchForm(FlaskForm):
     lastwords = StringField('Last Words')
     submit = SubmitField('Search')
-    
+
     def __repr__(self):
         return f"Last Words('{self.lastwords}')"
-    
-    
+

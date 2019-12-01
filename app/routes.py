@@ -1,7 +1,14 @@
-from flask import render_template, flash, redirect, url_for, request
-from app import app
+from flask import Flask, render_template, flash, redirect, url_for, request
 from app.forms import LoginForm, TextSearchForm
 import app.search as appsearch
+import app.classify as appclassify
+import app.captioner as appcaptioner
+from config import Config
+from flask_login import LoginManager
+
+app = Flask(__name__)#Starts the flask app
+app.config.from_object(Config)#Configures the app
+login = LoginManager(app)#Begins the login manager
 @app.route('/')#First routes to the local page
 @app.route('/index')#Then routes to index
 def index():#Defines the index look which is rendered with html @ index.html
@@ -37,5 +44,15 @@ def search():#Defines the search look which is rendered with html @ search.html
 def results():
     if request.method == 'POST':
         query = request.form.get('query')
-    query, ranking, totaldocs, totalwords, timetaken, TFIDFvals  = appsearch.search(query)
+    query, ranking, totaldocs, totalwords, timetaken, TFIDFvals = appsearch.search(query)
     return render_template('results.html', title = 'Results', query = query, doclist = ranking, totaldocs = totaldocs, totalwords = totalwords, timetaken = timetaken, TFIDFvals = TFIDFvals)
+
+@app.route('/classifier', methods=['GET', 'POST'])
+def classifier():
+    classlist = appclassify.classify()
+    return render_template('classify.html', title = 'Classifier', doclist=classlist)
+
+@app.route('/captioner', methods=['GET', 'POST'])
+def captioner():
+    appcaptioner.captioner()
+    return render_template('captioner.html', title = 'Image Captioner')

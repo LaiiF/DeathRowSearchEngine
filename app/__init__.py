@@ -6,4 +6,4 @@ app = Flask(__name__)#Starts the flask app
 app.config.from_object(Config)#Configures the app
 login = LoginManager(app)#Begins the login manager
 
-from app import routes
+import routes

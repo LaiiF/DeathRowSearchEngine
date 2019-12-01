@@ -1,0 +1,49 @@
+1.jpg#0 officer walks death row inmate out of his cell .
+1.jpg#1 prisoner follows officer .
+1.jpg#2 handcuffed prisoner exits his cell .
+1.jpg#3 guard leads handcuffed prisoner out of cell .
+
+2.jpg#0 electric chair and lethal injection table wait for next prisoner .
+2.jpg#1 lethal injection table and electric chair .
+2.jpg#2 blocked off electric chair and lethal injetion table .
+2.jpg#3 man viewing electric chair and lethal injection table .
+
+3.jpg#0 open gas chamber .
+3.jpg#1 gas chamber opened for next death row inmate .
+3.jpg#2 gas room .
+3.jpg#3 valve turned to open gas chamber .
+
+4.jpg#0 death row inmate peers out window .
+4.jpg#1 death row prisoner puts hand on window .
+4.jpg#2 prisoner in phone booth .
+4.jpg#3 death row inmate inside of a phone booth .
+
+5.jpg#0 prisoner escorted by guard .
+5.jpg#1 handcuffed prisoner walks with guard .
+5.jpg#2 prisoner led out of cell .
+5.jpg#3 guard ushers prisoner in handcuffs .
+
+6.jpg#0 guillotine being set up for next death row inmate .
+6.jpg#1 people watch as guillotine is reset .
+6.jpg#2 guards ready guillotine .
+6.jpg#3 man watches guards rest guillotine .
+
+7.jpg#0 condemned row gate open .
+7.jpg#1 death row door .
+7.jpg#2 woman leaving condemned row room .
+7.jpg#3 guard unlocking death row door .
+
+8.jpg#0 east block condemned row doors .
+8.jpg#1 man awaits entry into condemned row .
+8.jpg#2 man looks inside window of death row door .
+8.jpg#3 death row locked doors .
+
+9.jpg#0 photographers take picture of lethal injection table .
+9.jpg#1 media records footage of death row table .
+9.jpg#2 camera crew in death row room .
+9.jpg#3 people taking pictures of lethal injection table .
+
+10.jpg#0 guard escorting prisoner down stairs .
+10.jpg#1 handcuffed prisoner ushered by guard .
+10.jpg#2 inmate moved by prison guard .
+10.jpg#3 prisoner moves down stairs with guard .
