@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Classifications</h1>
+    <body>
+        <table style = "width:100%">
+            <h2>Doc_ID FirstName LastName LastStatement                                                                         Classifications: (Family, Government, Life, Death)</h2>
+            {% for arr in doclist %}
+                {% for value in arr %}
+                <td> {{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+{% endblock %}

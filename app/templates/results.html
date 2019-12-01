@@ -10,9 +10,25 @@
     <h2> Total docs: {{ totaldocs }} </h2>
     <h2> Total words: {{ totalwords }} </h2>
     Time Taken: {{ timetaken }}
-    <ul>
-    {% for doc in doclist %}
-    <li>{{ doc }}</li>
+    <table style = "width:100%">
+    {% if doclist %}
+        <tr>
+            {% for key in doclist[0] %}
+            <th> {{ key }}</th>
+            {% endfor %}
+        </tr>
+    {% endif %}
+
+    {% for dict in doclist %}
+    <tr>
+        {% for value in dict.values() %}
+        <td> {{ value }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+    {% for tfidf in TFIDFvals %}
+    <li>{{ tfidf }}</li>
     {% endfor %}
     </ul>
 </body>

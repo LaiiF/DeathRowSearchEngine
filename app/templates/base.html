@@ -1,9 +1,11 @@
 <html>
     <header>
-            Sitch: 
+            Sitch:
         <a href="{{ url_for('index') }}">Home</a>
         <a href="{{ url_for('login') }}">Login</a>
         <a href="{{ url_for('search') }}">Search</a>
+        <a href="{{ url_for('classifier') }}">Classifier</a>
+        <a href="{{ url_for('captioner') }}">Image Captioner</a>
     </header>
     <head>
         {% block content %}
