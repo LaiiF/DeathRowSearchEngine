@@ -126,6 +126,8 @@ Miguel Grinberg at https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-
 I have referenced one main source for the coding of the classifier:
 InsightBot at http://www.insightsbot.com/bag-of-words-algorithm-in-python-introduction/
 
+I have referenced one main source for the coding of the image captioner:
+Harshall Lambda at https://towardsdatascience.com/image-captioning-with-keras-teaching-computers-to-describe-pictures-c88a46a311b8
 To add from their portion, I've included a homepage, login page, caching, inverted index, lemmatization, and stemming.
   For the classifier, I streamlined the tokenization proccess and compiled the bag of words model based on all non-stop words in the last statements. I began with an SVM model and converted it to bag of words and Naiive Bayes.
   
