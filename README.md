@@ -38,6 +38,9 @@ CLASSIFIER:
 
 CAPTIONER:
 >The challenges I ran into was building the model for the captioner. I could build the set of descriptions and images, but having the captioner truly understand the image and having enough training/testing data to truly give an accurate caption was difficult. To boot, pythonanywhere would not allow me to install keras or tensorflow due to a faulty disk quota exceeded error on 60% capacity.
+
+OTHER CHALLENGES:
+>During the semester, my personal Desktop and my laptop died. The motherboard of the desktop failed during use, and the master boot record of my laptop became corrupted. The only computer my family had left was a chromebook which I used up until the end of October. From there, we could afford a laptop for my mother which I used until the end of the semester. 
 # Experiments
 First experiment was to compute TFIDF each time without caching. The average time taken was: [50.11078429222107]s
 With caching, the average time taken was: [0.04102754592895508]s
@@ -129,5 +132,5 @@ InsightBot at http://www.insightsbot.com/bag-of-words-algorithm-in-python-introd
 I have referenced one main source for the coding of the image captioner:
 Harshall Lambda at https://towardsdatascience.com/image-captioning-with-keras-teaching-computers-to-describe-pictures-c88a46a311b8
 To add from their portion, I've included a homepage, login page, caching, inverted index, lemmatization, and stemming.
-  For the classifier, I streamlined the tokenization proccess and compiled the bag of words model based on all non-stop words in the last statements. I began with an SVM model and converted it to bag of words and Naiive Bayes.
+  For the classifier, I streamlined the tokenization proccess and compiled the bag of words model based on all non-stop words in the last statements. 
   
